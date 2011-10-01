@@ -1,14 +1,23 @@
 !!!
-%html
+%html.no-js{:lang => "en"}
   %head
-    %title= @title || SiteConfig.title
-    %link{:href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %title title
+    %link{:href => "css/boilerplate-reset.css", :rel => "stylesheet"}/
+    %link{:href => "css/style.css", :rel => "stylesheet"}/
   %body
-    #container
-      #header
-        #logo
-          %h1
-            %a{:href => '/'}= SiteConfig.title
-      #content= yield
-      #footer
-        %p#legal= "&mdash; &copy; #{Time.now.strftime('%Y')} #{SiteConfig.author} &mdash;"
+    #wrapper
+      %header
+        %h1
+          %a{:href => "#"} site name
+      #main{:role => "main"}
+        %aside#main_sidebar
+          
+        #content
+          = yield
+      %footer
+      %p.copy &copy; Copyright 2011 &mdash; Jake Dahn
+    %script{:src => "/js/libs/modernizr-2.0.6.min.js"}
+    %script{:src => "/js/libs/jquery-1.6.2.min.js"}
+    %script{:src => "/js/application.js"}

@@ -1,0 +1,3 @@
+$(function(){
+  // insert magic here
+})
